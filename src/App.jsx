@@ -126,7 +126,7 @@ function useInjectStyles() {
 }
 
 function useDarkMode() {
-  const [dark, setDark] = useState(() => {
+  const [dark, setDark] = useState((true) => {
     try { return JSON.parse(localStorage.getItem("lokesh-dark")) || false } catch { return false }
   });
   useEffect(() => {
