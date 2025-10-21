@@ -205,7 +205,12 @@ export default function App() {
           <motion.div className="card" initial={{ opacity: 0, scale: 0.99 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <div className="avatar">
-                <img src="/profile.jpg" alt="Lokeshraja Balaji" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%" }} />
+                <img
+  src={process.env.PUBLIC_URL + '/profile.jpg'}
+  alt="Lokeshraja Balaji"
+  style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%" }}
+/>
+
               </div>
 
               <div style={{ marginTop: 14, textAlign: 'center' }}>
