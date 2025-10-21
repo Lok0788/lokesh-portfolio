@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/lokesh-portfolio/static/js/main.358aae6e.js",
+    "main.js": "/lokesh-portfolio/static/js/main.096216dd.js",
     "index.html": "/lokesh-portfolio/index.html",
-    "main.358aae6e.js.map": "/lokesh-portfolio/static/js/main.358aae6e.js.map"
+    "main.096216dd.js.map": "/lokesh-portfolio/static/js/main.096216dd.js.map"
   },
   "entrypoints": [
-    "static/js/main.358aae6e.js"
+    "static/js/main.096216dd.js"
   ]
 }
