@@ -163,7 +163,14 @@ export default function App() {
           <IconLink href={PROFILE.github} title="GitHub"><Github size={18} /></IconLink>
           <IconLink href={PROFILE.linkedin} title="LinkedIn"><Linkedin size={18} /></IconLink>
           <IconLink href={PROFILE.instagram} title="Instagram"><Instagram size={18} /></IconLink>
-          <a href="/resume.pdf" className="resume-btn" download><FileText size={16} /> Resume</a>
+          <a
+  href={`${process.env.PUBLIC_URL}/resume.pdf`}
+  className="resume-btn"
+  download="Lokeshraja_Resume.pdf"
+>
+  <FileText size={16} /> Resume
+</a>
+
           <motion.button
             onClick={() => setDark(d => !d)}
             className="icon-btn bulb-toggle"
