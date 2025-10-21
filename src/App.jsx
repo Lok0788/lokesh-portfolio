@@ -126,8 +126,8 @@ function useInjectStyles() {
 }
 
 function useDarkMode() {
-  const [dark, setDark] = useState((true) => {
-    try { return JSON.parse(localStorage.getItem("lokesh-dark")) || false } catch { return false }
+  const [dark, setDark] = useState(() => {
+    try { return JSON.parse(localStorage.getItem("lokesh-dark")) || true } catch { return true }
   });
   useEffect(() => {
     document.body.classList.toggle("dark", dark);
