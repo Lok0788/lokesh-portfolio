@@ -197,7 +197,17 @@ export default function App() {
 
             <div className="cta-row">
               <a className="cta" href="#projects">Projects</a>
-              <a className="cta" href={PROFILE.linkedin + '/details/certifications/'} target="_blank" rel="noreferrer">Certifications</a>
+              <a
+  className="cta"
+  href="#first-cert"
+  onClick={(e) => {
+    e.preventDefault();
+    document.getElementById("first-cert")?.scrollIntoView({ behavior: "smooth" });
+  }}
+>
+  Certifications
+</a>
+
               <a className="cta" href={PROFILE.instagram} target="_blank" rel="noreferrer">Instagram</a>
             </div>
 
@@ -258,13 +268,24 @@ export default function App() {
         <section className="section" id="certifications">
           <h2>Certifications</h2>
           <div className="cert-grid">
-            {PROFILE.certifications.map((c,i)=>(
-              <motion.div key={i} className="card" initial={{ opacity:0, y:6 }} whileHover={{ scale:1.02 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.4 }}>
-                <div style={{ fontWeight:700 }}>{c.title}</div>
-                <div style={{ color:'var(--muted-light)', marginTop:6 }}>{c.issuer}</div>
-                <div style={{ marginTop:8, color:'var(--muted-light)' }}>Skills: {c.skills.join(', ')}</div>
-              </motion.div>
-            ))}
+            {PROFILE.certifications.map((c, i) => (
+  <motion.div
+    key={i}
+    id={i === 0 ? "first-cert" : undefined}   // 👈 add this line
+    className="card"
+    initial={{ opacity: 0, y: 6 }}
+    whileHover={{ scale: 1.02 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.4 }}
+  >
+    <div style={{ fontWeight: 700 }}>{c.title}</div>
+    <div style={{ color: 'var(--muted-light)', marginTop: 6 }}>{c.issuer}</div>
+    <div style={{ marginTop: 8, color: 'var(--muted-light)' }}>
+      Skills: {c.skills.join(', ')}
+    </div>
+  </motion.div>
+))}
+
           </div>
           <div style={{ marginTop: 12 }}><a href={PROFILE.linkedin + '/details/certifications/'} target="_blank" rel="noreferrer" className="link">View all certifications</a></div>
         </section>
